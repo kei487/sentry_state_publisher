@@ -42,4 +42,16 @@ def generate_launch_description():
                 'frame_prefix': PythonExpression(["'", frame_prefix, "/'"])
             }],
         ),
+        Node(
+            package = 'tf2_ros',
+            executable = 'static_transform_publisher',
+            name = 'define_robot_frame',
+            namespace = '',
+            output = 'screen',
+            arguments = [
+                '--x', '0.1012', '--y', '0', '--z', '0.177',
+                '--qx', '0', '--qy', '0', '--qz', '0', '--qw', '1',
+                '--frame-id', 'odom', '--child-frame-id', 'base_footprint',
+                ],
+        ),
     ])
